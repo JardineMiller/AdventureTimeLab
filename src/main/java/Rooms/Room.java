@@ -56,4 +56,12 @@ public class Room {
     public int heroCount() {
         return heroes.size();
     }
+
+    public void removeDead() {
+        for(Adventurer enemy : enemies ) {
+            if(!enemy.isAlive()) {
+                enemies.remove(enemy);
+            }
+        }
+    }
 }

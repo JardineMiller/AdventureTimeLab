@@ -14,6 +14,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class RoomTest {
     ArrayList<Weapon> weapons;
@@ -69,6 +70,27 @@ public class RoomTest {
     public void playersAndEnemiesInRoom(){
         assertEquals(2, room.enemyCount());
         assertEquals(4, room.heroCount());
+    }
+
+    @Test
+    public void canSetRoomTreasure(){
+        room.setRoomTreasure();
+        assertEquals(400, room.getLoot());
+    }
+
+    @Test
+    public void canDistributeLoot(){
+        room.setRoomTreasure();
+        room.distributeLoot();
+        assertEquals(100, wizard.getPurse());
+    }
+
+    @Test
+    public void canRemoveDeadEnemy(){
+        knight.attack(ogre, zveihander);
+        knight.attack(ogre, zveihander);
+        room.removeDead();
+        assertEquals(1, room.enemyCount());
     }
 
 }
