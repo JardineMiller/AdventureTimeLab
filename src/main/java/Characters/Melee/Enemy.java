@@ -19,4 +19,5 @@ public class Enemy extends Melee {
         int damage = this.weapon.getDmgModifier() + this.getPower();
         target.takeDamage(damage);
     }
+
 }

@@ -20,7 +20,7 @@ public class RoomTest {
     ArrayList<Weapon> weapons;
     ArrayList<ICast> spells;
     ArrayList<Adventurer> heroes;
-    ArrayList<Adventurer> enemies;
+    ArrayList<Enemy> enemies;
     Spell fireball;
     Spell bolt;
     Spell bless;
@@ -54,8 +54,8 @@ public class RoomTest {
         cleric = new Cleric("Justicar", 200, 200, spells);
         heroes = new ArrayList<>();
         enemies = new ArrayList<>();
-        ogre = new Enemy("Ogre", 600, 30, weapons, 200);
-        troll = new Enemy("Troll", 800, 40, weapons, 200);
+        ogre = new Enemy("Ogre", 600, 30,  weapons, sword, 200);
+        troll = new Enemy("Troll", 800, 40, weapons, sword, 200);
         enemies.add(ogre);
         enemies.add(troll);
         heroes.add(cleric);

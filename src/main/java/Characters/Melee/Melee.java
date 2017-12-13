@@ -25,6 +25,9 @@ public abstract class Melee extends Adventurer {
         target.takeDamage(damage);
     }
 
+    public ArrayList<Weapon> getWeapons() {
+        return weapons;
+    }
 
     public void pickUpWeapon(Weapon weapon){
         this.weapons.add(weapon);

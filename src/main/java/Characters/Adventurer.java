@@ -8,14 +8,20 @@ public abstract class Adventurer {
     protected int power;
     protected int purse;
 
+
+
     public Adventurer(String name, int maxHealth, int power) {
         this.name = name;
         this.health = maxHealth;
         this.maxHealth = maxHealth;
         this.power = power;
         this.purse = 0;
+
     }
 
+    public String getName() {
+        return name;
+    }
     public int getHealth() {
         return health;
     }

@@ -1,16 +1,17 @@
 package Rooms;
 
 import Characters.Adventurer;
+import Characters.Melee.Enemy;
 
 import java.util.ArrayList;
 
 public class Room {
     private String name;
     private ArrayList<Adventurer> heroes;
-    private ArrayList<Adventurer> enemies;
+    private ArrayList<Enemy> enemies;
     private int loot;
 
-    public Room(String name, ArrayList<Adventurer> heroes, ArrayList<Adventurer> enemies) {
+    public Room(String name, ArrayList<Adventurer> heroes, ArrayList<Enemy> enemies) {
         this.name = name;
         this.heroes = heroes;
         this.enemies = enemies;
@@ -25,7 +26,7 @@ public class Room {
         return heroes;
     }
 
-    public ArrayList<Adventurer> getEnemies() {
+    public ArrayList<Enemy> getEnemies() {
         return enemies;
     }
 
@@ -58,7 +59,7 @@ public class Room {
     }
 
     public void removeDead() {
-        for(Adventurer enemy : enemies ) {
+        for(Enemy enemy : enemies ) {
             if(!enemy.isAlive()) {
                 enemies.remove(enemy);
             }
